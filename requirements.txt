@@ -3,7 +3,7 @@ async-timeout==3.0.0
 asyncio==3.4.3
 cffi==1.11.5
 chardet==3.0.4
-git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
+-e git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
 idna==2.6
 multidict==4.3.1
 pychalk==2.0.0
