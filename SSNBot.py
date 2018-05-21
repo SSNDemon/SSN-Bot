@@ -109,7 +109,7 @@ async def kick(ctx, user: discord.Member):
 @bot.event
 async def on_member_join(member):
 
-    roleq = discord.utils.get(member.guild.roles, name='&404430694408781844')
+    roleq = discord.utils.get(member.server.roles, name='&404430694408781844')
     await member.add_roles(member, roleq)
 
 @bot.command(pass_context=True)
@@ -134,8 +134,8 @@ async def on_message(message):
     author = message.author
     content = message.content
     channel = message.channel
-    guild = message.guild
-    print("{}: {} {}: {}".format(guild, channel, author, content))
+    server = message.server
+    print("{}: {} {}: {}".format(server, channel, author, content))
 
     await bot.process_commands(message)
 
@@ -144,21 +144,21 @@ async def on_message(message):
     author = message.author
     content = message.content
     channel = message.channel
-    guild = message.guild
+    server = message.server
     mention = message.author.mention
     if (message.content.startswith("no u")):
         if(message.author.bot):
-            print("{}: {} {}: {}".format(guild, channel, author, content))
+            print("{}: {} {}: {}".format(server, channel, author, content))
             await bot.process_commands(message)
         else:
-            print("{}: {} {}: {}".format(guild, channel, author, content))
+            print("{}: {} {}: {}".format(server, channel, author, content))
             await message.channel.send("no u {}".format(mention))
             await bot.process_commands(message)
     elif(message.author.bot):
-        print("{}: {} {}: {}".format(guild, channel, author, content))
+        print("{}: {} {}: {}".format(server, channel, author, content))
         await bot.process_commands(message)
     else:
-        print("{}: {} {}: {}".format(guild, channel, author, content))
+        print("{}: {} {}: {}".format(server, channel, author, content))
         await bot.process_commands(message)
 
 @bot.event
