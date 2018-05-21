@@ -144,6 +144,7 @@ async def on_message(message):
     author = message.author
     content = message.content
     channel = message.channel
+    guild = message.guild
     mention = message.author.mention
     if (message.content.startswith("no u")):
         if(message.author.bot):
