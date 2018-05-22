@@ -7,7 +7,7 @@ import time
 
 
 #Command Prefix for the bot
-bot = commands.Bot(command_prefix='!!')
+bot = commands.Bot(command_prefix='.')
 client = discord.Client()
 #Displays stuff on CMD of program bot
 @bot.event
