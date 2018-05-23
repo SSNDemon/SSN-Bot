@@ -19,7 +19,7 @@ async def on_ready():
 
 @bot.command
 async def ping(ctx):
-    bot.send(":ping_pong: Pong!")
+    bot.send_message(":ping_pong: Pong!")
 
 
 bot.run("NDQ3NDcxOTkyNDAxMjk3NDE4.DeIH9w.2O8b11UIDMCvAX8qKutMiBtH1KQ")
