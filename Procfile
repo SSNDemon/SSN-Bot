@@ -1,1 +1,1 @@
-worker: python SSNBot.py
+worker: python reSSNBot.py
