@@ -176,6 +176,22 @@ async def on_message_delete(message):
     await message.channel.send("{}".format(mention))
     await message.channel.send(embed=embed)
 
+@bot.command(pass_context=True)
+async def brent(ctx):
+    voice_channel = ctx.message.author.voice.voice_channel
+    await bot.join_voice_channel(voice_channel)
+
+
+###async def Guess():
+##    channel = client.get_channel('id')
+##    await Client.join_voice_channel(channel)
+
+
+
+
+
+
+
 
 #Token for discord bot goes here :P
 bot.run("NDQ3NDcxOTkyNDAxMjk3NDE4.DeIH9w.2O8b11UIDMCvAX8qKutMiBtH1KQ")
