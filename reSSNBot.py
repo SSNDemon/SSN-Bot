@@ -49,6 +49,7 @@ async def time(ctx):
         await bot.send_message(channel, "It's " + local_time + "EDT")
 
 # When command is sent it will check if the role "Daddy" is current in the sender
+# When command info is sent it will display info about the user
 @bot.command(pass_context=True)
 @commands.has_role("Daddy")
 async def info(ctx, user: discord.Member):
@@ -61,11 +62,27 @@ async def info(ctx, user: discord.Member):
     embed.set_thumbnail(url=user.avatar_url)
     await bot.send_message(ctx.message.channel, embed=embed)
 
+#When command kick is sent it will kick the user mentioned unless the sender does not have the right permission.
 @bot.command(pass_context=True)
 @commands.has_role("Daddy")
 async def kick(ctx, user: discord.Member):
     await bot.send_message(ctx.message.channel, ":boot: :ear_of_rice: Not in my, {} ricefields! :ear_of_rice: :boot:".format(user.mention) )
     await bot.kick(user)
+
+@bot.command(pass_context=True)
+async def fred(ctx):
+    await bot.send_message(ctx.message.channel, "Scooby says 'Ruh Roh!'")
+    await wait(2)
+    await bot.send_message(ctx.message.channel, "Shaggy says 'Zoinks!')
+    await wait(2)
+    await bot.send.message(ctx.message.channel, "Velma says 'Jinkies!'")
+    await wait(2)
+    await bot.send.message(ctx.message.channel, "Daphne says 'Jeepers!'")
+    await wait(2)
+    await bot.send.message(ctx.message.channel, "What does Fred say?")
+    await wait(2)
+    await bot.send.message(ctx.message.channel, "Computer: Fred says 'Fuck.'")
+    await bot.senf.message(ctx.message.channel, "No he DOES NOT!")
 
 
 
