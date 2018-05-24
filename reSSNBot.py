@@ -69,6 +69,7 @@ async def kick(ctx, user: discord.Member):
     await bot.send_message(ctx.message.channel, ":boot: :ear_of_rice: Not in my, {} ricefields! :ear_of_rice: :boot:".format(user.mention) )
     await bot.kick(user)
 
+#When command fred is sent it will do the fred says fuck meme.
 @bot.command(pass_context=True)
 async def fred(ctx):
     await bot.send_message(ctx.message.channel, "Scooby says 'Ruh Roh!'")
@@ -83,6 +84,31 @@ async def fred(ctx):
     await asyncio.sleep(2)
     await bot.send_message(ctx.message.channel, "Fred says 'Fuck.'")
     await bot.send_message(ctx.message.channel, "No he DOES NOT!")
+
+@bot.event
+async def on_message(message):
+    author = message.author
+    content = message.content
+    channel = message.channel
+    server = message.server
+    mention = message.author.mention
+    if message.content.startswith("no u"):
+        if(message.author.bot):
+            print("{}: {} {}: {}".format(server, channel, author, content))
+            await bot.process_commands(message)
+
+        else:
+            print("{}: {} {}: {}".format(server, channel, author, content))
+            await bot.send_message(channel, "no u {}".format(mention))
+            await bot.process_commands(message)
+
+    elif(message.author.bot):
+        print("{}: {} {}: {}".format(server, channel, author, content))
+        await bot.process_commands(message)
+
+    else:
+        print("{}: {} {}: {}".format(server, channel, author, content))
+        await bot.process_commands(message)
 
 
 
