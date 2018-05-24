@@ -75,13 +75,13 @@ async def fred(ctx):
     await asyncio.sleep(2)
     await bot.send_message(ctx.message.channel, "Shaggy says 'Zoinks!'")
     await asyncio.sleep(2)
-    await bot.send.message(ctx.message.channel, "Velma says 'Jinkies!'")
+    await bot.send_message(ctx.message.channel, "Velma says 'Jinkies!'")
     await asyncio.sleep(2)
-    await bot.send.message(ctx.message.channel, "Daphne says 'Jeepers!'")
+    await bot.send_message(ctx.message.channel, "Daphne says 'Jeepers!'")
     await asyncio.sleep(2)
-    await bot.send.message(ctx.message.channel, "What does Fred say?")
+    await bot.send_message(ctx.message.channel, "What does Fred say?")
     await asyncio.sleep(2)
-    await bot.send.message(ctx.message.channel, "Computer: Fred says 'Fuck.'")
+    await bot.send_message(ctx.message.channel, "Computer: Fred says 'Fuck.'")
     await bot.senf.message(ctx.message.channel, "No he DOES NOT!")
 
 
