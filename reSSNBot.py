@@ -31,23 +31,23 @@ async def time(ctx):
     channel = ctx.message.channel
     print(raw_time)
     if("1159" < raw_time < "1229"):
-        await bot.send_message(channel, "It's " + localtime + "EDT :clock12:")
+        await bot.send_message(channel, "It's " + local_time + "EDT :clock12:")
     elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + localtime + "EDT :clock1230:")
+        await bot.send_message(channel, "It's " + local_time + "EDT :clock1230:")
     elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + localtime + "EDT :clock1:")
+        await bot.send_message(channel, "It's " + local_time + "EDT :clock1:")
     elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + localtime + "EDT :clock130:")
+        await bot.send_message(channel, "It's " + local_time + "EDT :clock130:")
     elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + localtime + "EDT :clock2:")
+        await bot.send_message(channel, "It's " + local_time + "EDT :clock2:")
     elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + localtime + "EDT :clock230:")
+        await bot.send_message(channel, "It's " + local_time + "EDT :clock230:")
     elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + localtime + "EDT :clock3:")
+        await bot.send_message(channel, "It's " + local_time + "EDT :clock3:")
     elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + localtime + "EDT :clock330:")
+        await bot.send_message(channel, "It's " + local_time + "EDT :clock330:")
     else:
-        await bot.send_message(channel, "It's" + localtime + "EDT")
+        await bot.send_message(channel, "It's" + local_time + "EDT")
 
 # When command is sent it will check if the role "Daddy" is current in the sender
 @bot.command(pass_context=True)
