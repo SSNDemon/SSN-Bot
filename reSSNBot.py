@@ -29,7 +29,6 @@ async def time(ctx):
     raw_time = time.strftime("%I%M")
     local_time = time.strftime("%I:%M")
     channel = ctx.message.channel
-    print(raw_time)
     if("1159" < raw_time < "1229"):
         await bot.send_message(channel, "It's " + local_time + "EDT :clock12:")
     elif("1230" < raw_time < "1259"):
@@ -47,7 +46,7 @@ async def time(ctx):
     elif("1230" < raw_time < "1259"):
         await bot.send_message(channel, "It's " + local_time + "EDT :clock330:")
     else:
-        await bot.send_message(channel, "It's" + local_time + "EDT")
+        await bot.send_message(channel, "It's " + local_time + "EDT")
 
 # When command is sent it will check if the role "Daddy" is current in the sender
 @bot.command(pass_context=True)
@@ -61,6 +60,12 @@ async def info(ctx, user: discord.Member):
     embed.add_field(name="Joined", value=user.joined_at, inline=True)
     embed.set_thumbnail(url=user.avatar_url)
     await bot.send_message(ctx.message.channel, embed=embed)
+
+@bot.command(pass_context=True)
+@commands.has_role("Daddy")
+async def kick(ctx, user: discord.Member):
+    await bot.send_message(ctx.message.channel, ":boot: :ear_of_rice: Not in my, {} ricefields! :ear_of_rice: :boot:".format(user.mention) )
+    await user.kick(user)
 
 
 
