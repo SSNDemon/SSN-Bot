@@ -8,8 +8,8 @@ import asyncio
 import time
 # Finished of Imports
 
-if not discord.opus.is_loaded():
-    discord.opus.load_opus()
+if not discord.opus.is_loaded(name):
+    discord.opus.load_opus(name)
 
 #Command Prefix for bot
 bot = commands.Bot(command_prefix= ".")
