@@ -9,7 +9,7 @@ import time
 # Finished of Imports
 
 if not discord.opus.is_loaded():
-    discord.opus.load_opus(name)
+    discord.opus.load_opus('opus')
 
 #Command Prefix for bot
 bot = commands.Bot(command_prefix= ".")
