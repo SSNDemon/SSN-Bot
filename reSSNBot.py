@@ -65,7 +65,7 @@ async def info(ctx, user: discord.Member):
 @commands.has_role("Daddy")
 async def kick(ctx, user: discord.Member):
     await bot.send_message(ctx.message.channel, ":boot: :ear_of_rice: Not in my, {} ricefields! :ear_of_rice: :boot:".format(user.mention) )
-    await user.kick(user)
+    await bot.kick(user)
 
 
 
