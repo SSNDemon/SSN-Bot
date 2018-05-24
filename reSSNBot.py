@@ -114,6 +114,7 @@ async def on_message(message):
 async def brent(ctx):
     voice_channel = ctx.message.author.voice.voice_channel
     await bot.join_voice_channel(voice_channel)
+    voice.play(discord.FFmpegPCMAudio('./That_Time.mp3'))
 
 
 
