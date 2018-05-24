@@ -73,7 +73,7 @@ async def kick(ctx, user: discord.Member):
 async def fred(ctx):
     await bot.send_message(ctx.message.channel, "Scooby says 'Ruh Roh!'")
     await wait(2)
-    await bot.send_message(ctx.message.channel, "Shaggy says 'Zoinks!')
+    await bot.send_message(ctx.message.channel, "Shaggy says 'Zoinks!'")
     await wait(2)
     await bot.send.message(ctx.message.channel, "Velma says 'Jinkies!'")
     await wait(2)
