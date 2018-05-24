@@ -82,7 +82,7 @@ async def fred(ctx):
     await bot.send_message(ctx.message.channel, "What does Fred say?")
     await asyncio.sleep(2)
     await bot.send_message(ctx.message.channel, "Fred says 'Fuck.'")
-    await bot.send.message(ctx.message.channel, "No he DOES NOT!")
+    await bot.send_message(ctx.message.channel, "No he DOES NOT!")
 
 
 
