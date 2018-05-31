@@ -12,7 +12,7 @@ import time
 
 #Command Prefix for bot
 bot = commands.Bot(command_prefix= ".")
-OPUS_LIBS = ['libopus-0.x86.dll', 'libopus-0.x64.dll', 'libopus-0.dll', 'libopus.so.0', 'libopus.0.dylib']
+OPUS_LIBS = ['libopus0']
 
 async def load_opus_lib(opus_libs=OPUS_LIBS):
     if opus.is_loaded():
