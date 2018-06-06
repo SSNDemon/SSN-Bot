@@ -1,1 +1,1 @@
-worker: python reSSNBot.py
+worker: python chkversion.py
