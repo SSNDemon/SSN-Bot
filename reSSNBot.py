@@ -62,6 +62,7 @@ async def time(ctx):
         await bot.send_message(channel, "It's " + local_time + "EDT :clock330:")
     else:
         await bot.send_message(channel, "It's " + local_time + "EDT")
+    await bot.delete_message(ctx.channel)
 
 # When command is sent it will check if the role "Daddy" is current in the sender
 # When command info is sent it will display info about the user
@@ -76,6 +77,7 @@ async def info(ctx, user: discord.Member):
     embed.add_field(name="Joined", value=user.joined_at, inline=True)
     embed.set_thumbnail(url=user.avatar_url)
     await bot.send_message(ctx.message.channel, embed=embed)
+    await bot.delete_message(ctx.message)
 
 #When command kick is sent it will kick the user mentioned unless the sender does not have the right permission.
 @bot.command(pass_context=True)
@@ -83,6 +85,7 @@ async def info(ctx, user: discord.Member):
 async def kick(ctx, user: discord.Member):
     await bot.send_message(ctx.message.channel, ":boot: :ear_of_rice: Not in my, {} ricefields! :ear_of_rice: :boot:".format(user.mention) )
     await bot.kick(user)
+    await bot.delete_message(ctx.message)
 
 #When command fred is sent it will do the fred says fuck meme.
 @bot.command(pass_context=True)
@@ -99,6 +102,7 @@ async def fred(ctx):
     await asyncio.sleep(2)
     await bot.send_message(ctx.message.channel, "Fred says 'Fuck.'")
     await bot.send_message(ctx.message.channel, "No he DOES NOT!")
+    await bot.delete_message(ctx.message)
 
 @bot.event
 async def on_message(message):
