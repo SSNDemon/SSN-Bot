@@ -7,6 +7,7 @@ from discord.ext import commands
 from discord.ext.commands import bot
 import asyncio
 import time
+import platform
 # Finished of Imports
 
 
@@ -37,6 +38,14 @@ async def on_ready():
 async def ping(ctx):
     await bot.send_message(ctx.message.channel, ":ping_pong: Pong!")
 
+def os():
+    import platform
+    if (platform.system() == 'Windows'):
+        return "#"
+    elif (platform.system() == 'Linux'):
+        return "-"
+
+
 
 def time_o():
     import time
@@ -50,7 +59,7 @@ def time_o():
 async def time(ctx):
     import time
     raw_time = time.strftime("%I%M")
-    hour = time.strftime("%I")
+    hour = time.strftime("%{}I".format(os()))
     local_time = time.strftime("%I:%M")
     await bot.send_message(ctx.message.channel, "It's {} EDT :clock{}{}:".format(local_time, hour, time_o()))
 # When command is sent it will check if the role "Daddy" is current in the sender
