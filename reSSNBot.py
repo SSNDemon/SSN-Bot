@@ -37,33 +37,22 @@ async def on_ready():
 async def ping(ctx):
     await bot.send_message(ctx.message.channel, ":ping_pong: Pong!")
 
+
+def time_o():
+    import time
+    if("00" <= time.strftime("%M") <= "29"):
+        return ''
+    elif("30" <= time.strftime("%M") <= "59"):
+        return "30"
+
 # When the command time is sent then the output will contain the system time plus EDT timezone and a clock emoji
 @bot.command(pass_context=True)
 async def time(ctx):
     import time
     raw_time = time.strftime("%I%M")
+    hour = time.strftime("%I")
     local_time = time.strftime("%I:%M")
-    channel = ctx.message.channel
-    if("1159" < raw_time < "1229"):
-        await bot.send_message(channel, "It's " + local_time + "EDT :clock12:")
-    elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + local_time + "EDT :clock1230:")
-    elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + local_time + "EDT :clock1:")
-    elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + local_time + "EDT :clock130:")
-    elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + local_time + "EDT :clock2:")
-    elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + local_time + "EDT :clock230:")
-    elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + local_time + "EDT :clock3:")
-    elif("1230" < raw_time < "1259"):
-        await bot.send_message(channel, "It's " + local_time + "EDT :clock330:")
-    else:
-        await bot.send_message(channel, "It's " + local_time + "EDT")
-    await bot.delete_message(ctx.channel)
-
+    await bot.send_message(ctx.message.channel, "It's {} EDT :clock{}{}:".format(local_time, hour, time_o()))
 # When command is sent it will check if the role "Daddy" is current in the sender
 # When command info is sent it will display info about the user
 @bot.command(pass_context=True)
