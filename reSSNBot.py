@@ -161,4 +161,4 @@ async def kiss(ctx, user: discord.Member):
 
 
 # TOKEN FOR BOT
-bot.run("NDQ3NDcxOTkyNDAxMjk3NDE4.DeIH9w.2O8b11UIDMCvAX8qKutMiBtH1KQ")
+bot.run("")
