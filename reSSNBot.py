@@ -139,7 +139,23 @@ async def meme(ctx):
 @bot.command(pass_context=True)
 @commands.has_any_role("Daddy", "SSN Fam", "SSN")
 async def hug(ctx, user: discord.Member):
-    await bot.send_message(ctx.message.channel,"{} gave hugs to {}!".format(ctx.message.author.mention, user.mention) )
+    await bot.send_message(ctx.message.channel,"{} hugs {}!".format(ctx.message.author.mention, user.mention) )
+
+@bot.comamnd(pass_context=True)
+@commands.has_any_role("Daddy", "SSN Fam", "SSN")
+async def slap(ctx, user: discord.Member):
+    await bot.send_message(ctx.message.channel, "{} slaps {}! **KaPOW!**".format(ctx.nessage.author.mention, user.mentionn))
+
+
+@bot.comamnd(pass_context=True)
+@commands.has_any_role("Daddy", "SSN Fam", "SSN")
+async def punch(ctx, user: discord.Member):
+    await bot.send_message(ctx.message.channel, "{} punches {}! **KaPOW!**".format(ctx.nessage.author.mention, user.mentionn))
+
+@bot.comamnd(pass_context=True)
+@commands.has_any_role("Daddy", "SSN Fam", "SSN")
+async def kiss(ctx, user: discord.Member):
+    await bot.send_message(ctx.message.channel, "{} kisses {}! :heart:".format(ctx.nessage.author.mention, user.mentionn))
 
 
 
