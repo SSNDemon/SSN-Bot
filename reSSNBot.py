@@ -137,6 +137,7 @@ async def meme(ctx):
     player.start()
 
 @bot.command(pass_context=True)
+@commands.has_role("Daddy", "SSN Fam", "SSN")
 async def hug(ctx, user: discord.Member):
     await bot.send_message(ctx.message.channel,"{} gave hugs to {}!".format(ctx.message.author.mention, user.mention) )
 
