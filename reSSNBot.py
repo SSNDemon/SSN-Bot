@@ -128,10 +128,18 @@ async def on_message(message):
         await bot.process_commands(message)
 
 @bot.command(pass_context=True)
-async def brent(ctx):
-    voice_channel = ctx.message.author.voice.voice_channel
-    await bot.join_voice_channel(voice_channel)
-    voice.play(discord.FFmpegPCMAudio('./That_Time.mp3'))
+async def meme(ctx):
+    import time
+    author = ctx.message.author
+    voice_channel = author.voice_channel
+    vc = await bot.join_voice_channel(voice_channel)
+    player = await vc.create_ytdl_player("https://www.youtube.com/watch?v=shCYA2J-De8")
+    player.start()
+
+@bot.command(pass_context=True)
+async def hug(ctx, user: discord.mention):
+    await bot.send_message(ctx.message.channel,"{} gave hugs to {}!".format(ctx.message.author.mention, user) )
+
 
 
 
